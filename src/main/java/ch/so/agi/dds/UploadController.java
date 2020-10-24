@@ -37,6 +37,8 @@ public class UploadController {
         log.info(fileName);
         
         
+        // Muss nicht in Version 1 direkt importiert werden, sondern nur einmal pro Tag o.ä.
+        
         
         return new ResponseEntity<String>(HttpStatus.CREATED);
     }

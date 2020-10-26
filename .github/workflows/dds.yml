@@ -18,7 +18,7 @@ jobs:
         with:
           java-version: 11
       - name: Build with Gradle
-        run: ./gradlew clean build pullDockerImage buildDockerImage 
+        run: ./gradlew clean build  buildDockerImage 
       - name: ls
         run: ls -la build/libs/
         env:

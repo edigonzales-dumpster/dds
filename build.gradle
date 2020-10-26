@@ -22,9 +22,8 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-    compile group: 'javax.xml.bind',name:'jaxb-api', version:'2.3.1'
-    compile group: 'com.sun.xml.bind',name:'jaxb-core', version:'2.3.0.1'
-    compile group: 'com.sun.xml.bind',name:'jaxb-impl', version:'2.3.2'	
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
 }
 
 test {
@@ -39,6 +38,8 @@ bootJar {
     layered()
 }
 
+// Funktioniert nicht mit Java 11
+/*
 import com.bmuschko.gradle.docker.tasks.image.Dockerfile
 import com.bmuschko.gradle.docker.tasks.image.DockerPullImage
 import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
@@ -89,6 +90,7 @@ task pushDockerImages() {
         tasks.findAll { task -> task.name.startsWith('pushDockerImage_') }
     }    
 }
+*/
 
 def getCheckedOutGitCommitHash() {
     'git log -1 --pretty=%H'.execute().text.trim()

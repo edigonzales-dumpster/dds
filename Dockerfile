@@ -1,4 +1,4 @@
-FROM adoptopenjdk:11.0.8_10-jre-hotspot as builder
+FROM adoptopenjdk:11.0.8_10-jdk-hotspot as builder
 WORKDIR /home/app
 ARG JAR_FILE=build/libs/dds*.jar
 COPY ${JAR_FILE} /home/app/application.jar

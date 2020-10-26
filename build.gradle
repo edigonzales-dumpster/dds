@@ -39,6 +39,7 @@ bootJar {
 }
 
 // Funktioniert nicht mit Java 11
+
 /*
 import com.bmuschko.gradle.docker.tasks.image.Dockerfile
 import com.bmuschko.gradle.docker.tasks.image.DockerPullImage
@@ -91,6 +92,8 @@ task pushDockerImages() {
     }    
 }
 */
+
+import java.text.SimpleDateFormat
 
 def getCheckedOutGitCommitHash() {
     'git log -1 --pretty=%H'.execute().text.trim()

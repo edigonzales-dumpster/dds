@@ -28,10 +28,11 @@ jobs:
         run: ls -la build/libs/
         env:
           BUILD_NUMBER: ${{ env.GITHUB_RUN_NUMBER }}
-      - name: Push docker image
+      - name: Build docker image
         run: |
           export CI_JOB_TIMESTAMP=$(date +%Y%m%dT%H%M%S)
           echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+          docker pull $DOCKER_ACCOUNT/$DOCKER_REPO:latest
           docker build -t $DOCKER_ACCOUNT/$DOCKER_REPO:1.0.$GITHUB_RUN_NUMBER
           docker build -t $DOCKER_ACCOUNT/$DOCKER_REPO:latest
       - name: Push docker image

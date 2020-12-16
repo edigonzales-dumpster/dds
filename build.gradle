@@ -1,8 +1,8 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.4.RELEASE'
+	id 'org.springframework.boot' version '2.4.1'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
-    id "com.bmuschko.docker-remote-api" version "6.1.2" 	
+    //id "com.bmuschko.docker-remote-api" version "6.1.2" 	
 }
 
 apply from: "gradle/versioning.gradle"
@@ -19,9 +19,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
     implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
     implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
 }
@@ -34,10 +32,11 @@ test {
     }	
 }
 
+/*
 bootJar {
     layered()
 }
-
+*/
 // Funktioniert nicht mit Java 11
 
 /*

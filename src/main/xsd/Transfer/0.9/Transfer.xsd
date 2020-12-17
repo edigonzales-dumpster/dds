@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://geo.so.ch/schema/AGI/dds/0.9/Extract" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:transfer="http://geo.so.ch/schema/AGI/dds/0.9/Extract">
+    <element name="Transfer" type="transfer:TransferType"></element>
+
+    <complexType name="TransferType">
+    	<sequence>
+            <element name="Topic" type="normalizedString" minOccurs="1" maxOccurs="1"></element>
+            <element name="Dataset" minOccurs="1" maxOccurs="1"
+    			type="normalizedString">
+    		</element>
+    		<element name="File" minOccurs="1" maxOccurs="1"
+    			type="normalizedString">
+    		</element>
+    		<element name="lastEditingDate" type="date" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="Sender">
+    			<complexType>
+    				<sequence>
+    					<element maxOccurs="unbounded" name="Email"
+    						type="normalizedString" />
+    				</sequence>
+    			</complexType>
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

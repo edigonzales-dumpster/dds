@@ -4,14 +4,17 @@
 
     <complexType name="TransferType">
     	<sequence>
-            <element name="Topic" type="normalizedString" minOccurs="1" maxOccurs="1"></element>
-            <element name="Dataset" minOccurs="1" maxOccurs="1"
+    		<element name="Topic" type="normalizedString" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="Dataset" minOccurs="0" maxOccurs="1"
     			type="normalizedString">
     		</element>
     		<element name="File" minOccurs="1" maxOccurs="1"
     			type="normalizedString">
     		</element>
-    		<element name="lastEditingDate" type="date" minOccurs="0"
+            <element name="FileFormat" type="normalizedString" minOccurs="1" maxOccurs="1"></element>
+            <element name="lastEditingDate" type="date" minOccurs="0"
     			maxOccurs="1">
     		</element>
     		<element name="Sender">
